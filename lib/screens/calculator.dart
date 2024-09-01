@@ -5,30 +5,23 @@ import '../components/keyboard.dart';
 import '../provider/calculo_provider.dart';
 
 class Calculator extends StatefulWidget {
-
   @override
   _CalculatorState createState() => _CalculatorState();
 }
 
 class _CalculatorState extends State<Calculator> {
   final Memory memory = Memory();
-   
-    _onPressed(String command) {
+
+  _onPressed(String command) {
     setState(() {
       memory.applyCommand(command);
-      
     });
-  
-}
-
+  }
 
   @override
   Widget build(BuildContext context) {
-
     // Evitar quebra de layout ao virar o device
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp
-    ]);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return MaterialApp(
       home: Column(
         children: <Widget>[
@@ -39,5 +32,4 @@ class _CalculatorState extends State<Calculator> {
       ),
     );
   }
-
 }

@@ -50,7 +50,7 @@ class Memory {
     final isComma = value == ',';
     final clearValue = (_value == '0' && !isComma) || _clearValue;
 
-    if(isComma && _value.contains(',') && !clearValue);
+    if (isComma && _value.contains(',') && !clearValue) ;
 
     final emptyValue = isComma ? '0' : '';
     final currentValue = clearValue ? emptyValue : _value;

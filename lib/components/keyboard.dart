@@ -16,7 +16,7 @@ class Keyboard extends StatelessWidget {
           ButtonRow([
             Button.big(text: 'AC', twobutton: true, color: Button.DARK, cb: cb),
             // Button(text: 'C'),
-            Button(text: '%',color: Button.DARK, cb: cb),
+            Button(text: '%', color: Button.DARK, cb: cb),
             Button.operation(text: '/', cb: cb),
           ]),
           SizedBox(height: 1),
@@ -27,7 +27,6 @@ class Keyboard extends StatelessWidget {
             Button.operation(text: 'X', cb: cb),
           ]),
           SizedBox(height: 1),
-          
           ButtonRow([
             Button(text: '4', cb: cb),
             Button(text: '5', cb: cb),
@@ -44,7 +43,7 @@ class Keyboard extends StatelessWidget {
           SizedBox(height: 1),
           ButtonRow([
             Button.big(text: '0', twobutton: true, cb: cb),
-            Button(text: ',', cb: cb),            
+            Button(text: ',', cb: cb),
             // Button(text: 'C', cb: cb),
             Button.operation(text: '=', cb: cb),
           ])
@@ -71,11 +70,11 @@ class Button extends StatelessWidget {
     required this.cb,
   });
 
-   Button.big({
-     required this.text,
-     this.twobutton = false,
-     this.color = DEFAULT,
-     required this.cb,
+  Button.big({
+    required this.text,
+    this.twobutton = false,
+    this.color = DEFAULT,
+    required this.cb,
   });
 
   Button.operation({
@@ -98,16 +97,12 @@ class Button extends StatelessWidget {
       flex: twobutton ? 2 : 1,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
-          shape: RoundedRectangleBorder(
-            // borderRadius: BorderRadius.circular(18.0),
-            borderRadius: BorderRadius.zero,
-            side: BorderSide(color: DEFAULT)
-            
-        ),
-          backgroundColor: this.color),
-          
-                   
+            padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+            shape: RoundedRectangleBorder(
+                // borderRadius: BorderRadius.circular(18.0),
+                borderRadius: BorderRadius.zero,
+                side: BorderSide(color: DEFAULT)),
+            backgroundColor: this.color),
         child: Text(text,
             style: TextStyle(
               color: Colors.white,
@@ -135,9 +130,7 @@ class ButtonRow extends StatelessWidget {
         children: buttons.fold(<Widget>[], (list, b) {
           list.isEmpty ? list.add(b) : list.addAll([SizedBox(width: 1), b]);
           return list;
-
         }),
-        
       ),
     );
   }
